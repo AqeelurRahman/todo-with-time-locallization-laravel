@@ -21,6 +21,7 @@
                     <tr class="border-b">
                         <th class="text-left p-3 px-5">Task</th>
                         <th class="text-left p-3 px-5">Creation Date</th>
+                        <th class="text-left p-3 px-5">Due Date</th>
                         <th class="text-left p-3 px-5">Actions</th>
                         <th></th>
                     </tr>
@@ -33,7 +34,10 @@
                                 {{$task->description}}
                             </td>
                             <td class="p-3 px-5">
-                                {{$task->created_at->setTimezone(auth()->user()->time_zone)}}
+                                {{$task->created_at}}
+                            </td>
+                            <td class="p-3 px-5">
+                                {{$task->due_date->format('h:i A, jS F ')}}
                             </td>
                             <td class="p-3 px-5">
 
